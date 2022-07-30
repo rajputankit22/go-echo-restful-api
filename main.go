@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"go-echo-restful-api/handler"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -17,7 +18,7 @@ func main()  {
 
 	api := e.Group("/api/v1", serverHeader)
 	api.GET("/products", handler.GetProducts)          // Returns all resources of this product
-
+	fmt.Println("Ankit")
 	// service start at port :9090
 	err := e.Start(":9090")
 	if err != nil {
