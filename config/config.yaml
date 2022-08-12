@@ -1,0 +1,9 @@
+database:
+  address: "localhost:27017,localhost:27017"
+  database: "example"
+  username: ""
+  password: ""
+  debug: true
+  port: 27017
+api:
+  token: "example-test"
