@@ -32,8 +32,8 @@ type ProductUpdate struct {
 	ImageOpen             string        `json:"image_open" bson:"image_open" nosql:"image_open" validate:"-"`
 	Description           string        `json:"description" bson:"description" nosql:"description" validate:"-"`
 	Story                 string        `json:"story" bson:"story" nosql:"story" validate:"-"`
-	SourcingValues        []string      `json:"sourcing_values" bson:"sourcing_values" nosql:"sourcing_values" validate:"-"`
-	Ingredients           []string      `json:"ingredients" bson:"ingredients" nosql:"ingredients" validate:"-"`
+	SourcingValues        []string      `json:"sourcing_values" bson:"sourcing_values" validate:"required"`
+	Ingredients           []string      `json:"ingredients" bson:"ingredients" validate:"required"`
 	AllergyInfo           string        `json:"allergy_info" bson:"allergy_info" nosql:"allergy_info" validate:"-"`
 	DietaryCertifications string        `json:"dietary_certifications" bson:"dietary_certifications" nosql:"dietary_certifications" validate:"-"`
 	ProductID             string        `json:"product_id" bson:"product_id"`

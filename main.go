@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	// "go-echo-restful-api/config"
 	"go-echo-restful-api/db"
 	"go-echo-restful-api/handler"
@@ -23,8 +23,9 @@ func main()  {
 	api := e.Group("/api/v1", serverHeader)
 	api.GET("/products", handler.GetProducts)          // Returns all resources of this product
 	api.POST("/products", handler.CreateProduct)       // Creates a resource of this product and stores the data you posted, then returns the ID
-	
-	fmt.Println("Ankit")
+	api.GET("/products/:id", handler.GetProduct)       // Returns the resource of this product with that ID
+	api.DELETE("/products/:id", handler.DeleteProduct) // Deletes the resource of this product with that ID
+	api.PUT("/products/:id", handler.UpdateProduct)    // Updates the resource of this product with that ID
 
 	err := db.Ping()
 	if err != nil {
